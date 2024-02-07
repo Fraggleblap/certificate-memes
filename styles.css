@@ -1,0 +1,7 @@
+#certificate {
+    display: flex;
+    justify-content: center;
+    background-color: yellow;
+    width: 70%;
+    height: 80vh;
+}
