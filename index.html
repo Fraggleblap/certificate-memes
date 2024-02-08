@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certified Certificates</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <section id="certificate">
+        <img id="bottomCornerimgReg" src="/images/regulardecoration1.png">
+        <img id="topCornerimgReg" src="/images/regulardecoration1.png">
         <br>
+        <p id="testOutput">bottem text</p>
     </section>
 
     <section id="info">
         <h1>Information</h1>
         <h3>Certificate of</h3>
-        <select id="type">
-            <option value="lecture">JavaScript Lecture Rudeness</option>
-            <option value="beans">Bean Keeper</option>
-            <option value="quality">Low Quality Assurance</option>
-            <option value="finishing">Procrastination</option>
-        </select>
+        <form id="typeForm">
+            <select id="type">
+                <option value="lecture">JavaScript Lecture Rudeness</option>
+                <option value="beans">Bean Keeper</option>
+                <option value="quality">Low Quality Assurance</option>
+                <option value="finishing">Procrastination</option>
+            </select>
+        </form>
+        <button onclick="window.print()">Print</button>
     </section>
 </body>
 </html>
