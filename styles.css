@@ -1,18 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Linefont:wght@100&display=swap');
+
 #certificate {
     display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+    justify-content: space-between;
     --background-color: rgb(249, 249, 249);
-    width: 70%;
+    width: 75%;
     height: 80vh;
     border-radius: 2px;
     border-color: black;
     border-style: solid;
+    padding-left: -10%;
+    padding-right: -10%;
+    margin-left: 12%;
+    margin-right: 15%;
+    margin-top: 2%;
 }
 
-#bottomCornerimgReg, #topCornerimgReg {
+#info {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: -.1%;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: .5%;
+}
+
+#certificateName {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 100px;
+}
+
+#certDetails {
+    margin-top: -10%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+}
+
+#nameLabel {
+    text-align: center;
+    font-size: 48px;
+}
+
+#explanation {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    padding-left: -50%;
+    padding-right: -50%;
+}
+
+#bottomCornerimgReg, #topCornerimgReg, #topCornerimgFabric {
     width: 40%;
     height: 40%;
+}
+
+#bottomCornerimgReg {
+    display: flex;
+    flex-flow: row;
+    rotate: 180deg;
+    justify-content: flex-start;
+    align-self: flex-end;
+}
+
+#topCornerimgReg {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    align-self: flex-start;
+}
+
+#topCornerimgFabric {
+    display: initial;
+    flex-flow: row nowrap;
+    rotate: 110deg;
+    justify-content: flex-start;
+    align-self: flex-start;
 }
 
 .lecture {
@@ -29,4 +104,27 @@
 
 .finishing {
     --background-color: rgb(132, 28, 28);
+}
+
+@media print {
+    #info {
+        display: none;
+    }
+    #certificate {
+        display: flex;
+        justify-content: space-between;
+        --background-color: rgb(249, 249, 249);
+        width: 80%;
+        height: 80vh;
+        border-radius: 2px;
+        border-color: black;
+        border-style: solid;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin: 0%;
+    }
+    #bottomCornerimgReg, #topCornerimgReg {
+        margin-left: -12.5%;
+        margin-right: -12.5%;
+    }
 }
