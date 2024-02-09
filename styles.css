@@ -24,6 +24,27 @@
     margin-bottom: 5%;
 }
 
+#leafLogo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 15%;
+    margin-left: 8%;
+    z-index: 0;
+}
+
+#leaf {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 18%;
+    margin-left: 8%;
+    margin-top: -2%;
+    z-index: 0;
+}
+
 h1 {
     font-size: 50px;
     margin-bottom: -.1%;
@@ -41,7 +62,7 @@ h3 {
 }
 
 #certDetails {
-    margin-top: -10%;
+    margin-top: -5%;
     display: flex;
     flex-flow: row wrap;
     align-items: center;

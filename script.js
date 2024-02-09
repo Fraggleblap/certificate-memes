@@ -1,3 +1,4 @@
+let goofyString = `For being the world’s biggest procrastinator since`
 // Add Event listners when DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -32,39 +33,44 @@ document.addEventListener("DOMContentLoaded", function () {
     // Log readiness to console
     console.log("Ready");
 
-    function getDate() {
-        let theDate = new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})
-        //let dateBox = document.getElementById('theDate');
-        //dateBox.innerText = theDate;
-        return theDate;
-    }
-
     function changeCert(value) {
         let textSection = document.getElementById('textSection');
         textSection.classList = ""; // clear classes on each function call
+        document.getElementById(`topCornerimgReg`).style.rotate = `0deg`;
+        let lastString = ``;
         switch (value) {
             case 'lecture':
                 document.getElementById('certDetails').innerText = "Being inconsiderate during a JavaScript lecture";
                 document.getElementById(`certDetails`).style.fontSize = '48px';
-                document.getElementById('explanation').innerText = `For failing to give due attention to the speaker during a JavaScript 
-                lecture on the day of ${getDate}`;
+                document.getElementById('explanation').innerHTML = `<h3 id="explanation">For failing to give due attention to the speaker during a JavaScript 
+                lecture on the day of <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
                 document.getElementById('explanation').style.fontSize = '20px';
                 textSection.classList.add('lecture');
                 break;
             case 'beans':
                 document.getElementById('certDetails').innerText = "Bean Keeper";
                 document.getElementById(`certDetails`).style.fontSize = '50px';
+                document.getElementById('explanation').innerHTML = `<h3 id="explanation">For being a volunteer bean keeper since <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
+                document.getElementById('explanation').style.fontSize = '20px';
                 textSection.classList.add('beans');
                 break;
             case 'quality':
                 document.getElementById('certDetails').innerHTML = `<h2 id="certDetails">low q<span style="font-family: 'Roboto', sans-serif;">a</span><span style="font-family: 'Dancing Script', cursive;"></span>lity assurance</h2>`;
                 document.getElementById(`certDetails`).style.fontSize = '38px';
+                document.getElementById('explanation').innerHTML = `<h3 id="explanation">for dubble chEcking company pROducTs since <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
                 textSection.classList.add('quality');
                 break;
             case 'finishing':
                 document.getElementById('certDetails').innerText = `Not Finishing Your`;
                 document.getElementById(`certDetails`).style.fontSize = '50px';
+                
+                for (let i = 0; i < goofyString.length; i++) {
+                    lastString += lastString.charAt(i);
+                }
+                document.getElementById(`explanation`).innerText = lastString;
+                //document.getElementById('explanation').innerHTML = `<h3 id="explanation">For being the world’s biggest procrastinator since <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
                 textSection.classList.add('finishing');
+                document.getElementById(`topCornerimgReg`).style.rotate = `180deg`;
                 break;
         }
     }
