@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let textSection = document.getElementById('textSection');
         textSection.classList = ""; // clear classes on each function call
         document.getElementById(`topCornerimgReg`).style.rotate = `0deg`;
+        document.getElementById(`leafLogo`).style.rotate = `0deg`;
+        document.getElementById(`leaf`).style.opacity = 1;
         let lastString = ``;
         switch (value) {
             case 'lecture':
@@ -77,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById(`certDetails`).style.fontSize = '50px';
                 document.getElementById('explanation').innerHTML = `<h3 id="explanation">For being the world’s biggest procrastinator since <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
                 textSection.classList.add('finishing');
+                document.getElementById(`leaf`).style.opacity = 0;
+                document.getElementById(`leafLogo`).style.rotate = `6deg`;
                 document.getElementById(`topCornerimgReg`).style.rotate = `180deg`;
                 break;
         }
