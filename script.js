@@ -1,4 +1,4 @@
-let goofyString = `For being the world’s biggest procrastinator since`
+let goofyString = `for dubble chEcking company pROducTs since January 1st, 1970`;
 // Add Event listners when DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -57,18 +57,25 @@ document.addEventListener("DOMContentLoaded", function () {
             case 'quality':
                 document.getElementById('certDetails').innerHTML = `<h2 id="certDetails">low q<span style="font-family: 'Roboto', sans-serif;">a</span><span style="font-family: 'Dancing Script', cursive;"></span>lity assurance</h2>`;
                 document.getElementById(`certDetails`).style.fontSize = '38px';
-                document.getElementById('explanation').innerHTML = `<h3 id="explanation">for dubble chEcking company pROducTs since <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
+                                
+                for (let i = 0; i < goofyString.length; i++) {
+                    let chance = Math.floor(Math.random() * 5);
+                    if (chance === 2 && goofyString.charAt(i) !== ` `) {
+                        lastString += goofyString.charAt(i).toUpperCase();
+                    } else if(chance !== 2 && goofyString.charAt(i) !== ` `) {
+                        lastString += goofyString.charAt(i).toLowerCase();
+                    } else if(goofyString.charAt(i) === ` `) {
+                        lastString += goofyString.charAt(i);
+                    }
+                }
+                document.getElementById(`explanation`).innerText = lastString;
+                //document.getElementById('explanation').innerHTML = `<h3 id="explanation">for dubble chEcking company pROducTs since <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
                 textSection.classList.add('quality');
                 break;
             case 'finishing':
                 document.getElementById('certDetails').innerText = `Not Finishing Your`;
                 document.getElementById(`certDetails`).style.fontSize = '50px';
-                
-                for (let i = 0; i < goofyString.length; i++) {
-                    lastString += lastString.charAt(i);
-                }
-                document.getElementById(`explanation`).innerText = lastString;
-                //document.getElementById('explanation').innerHTML = `<h3 id="explanation">For being the world’s biggest procrastinator since <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
+                document.getElementById('explanation').innerHTML = `<h3 id="explanation">For being the world’s biggest procrastinator since <span>${new Date().toLocaleDateString('en-us', {weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span></h3>`;
                 textSection.classList.add('finishing');
                 document.getElementById(`topCornerimgReg`).style.rotate = `180deg`;
                 break;
